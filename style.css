@@ -1,0 +1,25 @@
+body {}
+
+#screen {
+    background-color: rgb(31, 26, 26);
+    position: relative;
+    top: 20px;
+    left: 40px;
+    width: 820px;
+    height: 510px;
+}
+
+.ball {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid rgb(134, 22, 22);
+    border-radius: 100%;
+    visibility: hidden;
+}
+
+#info {
+    position: absolute;
+    left: 1000px;
+    top: 40px;
+}
