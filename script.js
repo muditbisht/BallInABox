@@ -1,8 +1,10 @@
 const ballExample = document.getElementsByClassName("ball")[0];
 const screenWidth = 800;
 const screenHeight = 500;
+let intervalID = null;
+
 class Ball {
-    constructor(posX, posY, initVelX, initVelY, accX, accY, size = 5) {
+    constructor(posX, posY, initVelX, initVelY, accX, accY, size = 10) {
         this.x = posX;
         this.y = posY;
         this.dx = initVelX;
@@ -13,6 +15,21 @@ class Ball {
         this.element = ballExample.cloneNode();
         this.element.style.borderWidth = `${this.size}px`;
         document.getElementById("screen").appendChild(this.element);
+    }
+    setData(posX, posY, initVelX, initVelY, accX, accY, size = 5) {
+        clearInterval(intervalID);
+        intervalID = null;
+        this.x = parseInt(posX);
+        this.y = parseInt(posY);
+        this.dx = parseInt(initVelX);
+        this.dy = parseInt(initVelY);
+        this.ax = parseInt(accX);
+        this.ay = parseInt(accY);
+        this.size = parseInt(size);
+        intervalID = setInterval(() => {
+            this.move();
+            this.render();
+        }, 20);
     }
     render() {
         this.element.style.top = `${screenHeight - this.y}px`;
@@ -42,11 +59,9 @@ class Ball {
 };
 
 // Ball(positionX,  positionY, velocityX, velocityY, accelerationX, accelerationY)
-const ball1 = new Ball(300, 400, 0, -2, 0, -2, 10);
-const ball2 = new Ball(100, 200, 30, 50, 0, -2, 10);
-setInterval(() => {
-    ball1.move();
-    ball1.render();
-    ball2.move();
-    ball2.render();
+const ball = new Ball(300, 400, 0, -2, 0, -2, 10);
+setInputValues(ball);
+intervalID = setInterval(() => {
+    ball.move();
+    ball.render();
 }, 20);
