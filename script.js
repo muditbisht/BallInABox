@@ -16,7 +16,7 @@ class Ball {
         this.element.style.borderWidth = `${this.size}px`;
         document.getElementById("screen").appendChild(this.element);
     }
-    setData(posX, posY, initVelX, initVelY, accX, accY, size = 5) {
+    setData(posX, posY, initVelX, initVelY, accX, accY, size = 10) {
         clearInterval(intervalID);
         intervalID = null;
         this.x = parseInt(posX);
