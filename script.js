@@ -32,8 +32,8 @@ class Ball {
         }, 20);
     }
     render() {
-        this.element.style.top = `${screenHeight - this.y}px`;
-        this.element.style.left = `${this.x}px`;
+        this.element.style.top = `${screenHeight - this.y }px`;
+        this.element.style.left = `${this.x - this.size}px`;
         this.element.style.visibility = "visible";
         document.getElementById("posX").innerText = this.x;
         document.getElementById("posY").innerText = this.y;
@@ -53,13 +53,16 @@ class Ball {
             this.dy = -this.dy * 0.9;
             this.y = this.y < this.size ? this.size : screenHeight - this.size;
         }
+        if (Math.abs(this.y - this.size) < 1) {
+            this.dx = (this.dx < 0 ? -1 : 1) * (Math.abs(this.dx) - 0.05 > 0 ? Math.abs(this.dx) - 0.05 : 0);
+        }
         this.dx += this.ax;
         this.dy += this.ay;
     }
 };
 
 // Ball(positionX,  positionY, velocityX, velocityY, accelerationX, accelerationY)
-const ball = new Ball(300, 400, 0, -2, 0, -2, 10);
+const ball = new Ball(0, 0, 0, -2, 0, -2, 10);
 setInputValues(ball);
 intervalID = setInterval(() => {
     ball.move();
