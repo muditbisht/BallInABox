@@ -62,7 +62,7 @@ class Ball {
 };
 
 // Ball(positionX,  positionY, velocityX, velocityY, accelerationX, accelerationY)
-const ball = new Ball(0, 0, 0, -2, 0, -2, 10);
+const ball = new Ball(250, 300, 10, 10, 0, -1, 10);
 setInputValues(ball);
 intervalID = setInterval(() => {
     ball.move();
