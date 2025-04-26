@@ -13,7 +13,7 @@ body {}
     position: absolute;
     width: 0;
     height: 0;
-    border: 10px solid rgb(134, 22, 22);
+    border: 10px solid rgb(249, 255, 212);
     border-radius: 100%;
     visibility: hidden;
 }

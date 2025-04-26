@@ -14,33 +14,39 @@
         <div class="ball"></div>
     </div>
     <div id="info">
-        <p>Position: &lt; X-axis: <span id="posX"></span>&comma; Y-axis: <span id="posY"></span> &gt;</p>
+        <p>Position: &lt; 
+            X-axis: <span id="posX"></span>&comma; 
+            Y-axis: <span id="posY"></span> &gt;
+        </p>
         <p>Speed: &lt; X-axis: <span id="speedX"></span>&comma; Y-axis: <span id="speedY"></span> &gt;</p>
         <p>Acceleration: &lt; X-axis: <span id="accX"></span>&comma; Y-axis: <span id="accY"></span> &gt;</p>
         <form action="#" onsubmit="formSubmit();">
-            <ul>
-                <li>
-                    <p>Enter initial position on X-Y plane </p>
-                    <label for="posX">X-axis</label>
-                    <input type="number" name="posX" id="in-posX" max="800" min="0" />
-                    <label for="posY">Y-axis</label>
-                    <input type="number" name="posY" id="in-posY" max="500" min="0" />
-                </li>
-                <li>
-                    <p>Enter initial Velocities on X-Y plane </p>
-                    <label for="velX">X-axis</label>
-                    <input type="number" name="velX" id="in-velX">
-                    <label for="velY">Y-axis</label>
-                    <input type="number" name="velY" id="in-velY">
-                </li>
-                <li>
-                    <p>Enter acceleration on X-Y plane </p>
-                    <label for="accX">X-axis</label>
-                    <input type="number" name="accX" id="in-accX">
-                    <label for="accY">Y-axis</label>
-                    <input type="number" name="accY" id="in-accY">
-                </li>
-            </ul>
+            <li>
+                <p>Enter initial position on X-Y plane </p>
+                <label for="posX">X-axis</label>
+                <input type="number" name="posX" id="in-posX" max="800" min="0" />
+                <br />
+                <label for="posY">Y-axis</label>
+                <input type="number" name="posY" id="in-posY" max="500" min="0" />
+            </li>
+            <hr />
+            <li>
+                <p>Enter initial Velocities on X-Y plane </p>
+                <label for="velX">X-axis</label>
+                <input type="number" step="0.01" name="velX" id="in-velX">
+                <br />
+                <label for="velY">Y-axis</label>
+                <input type="number" step="0.01" name="velY" id="in-velY">
+            </li>
+            <hr />
+            <li>
+                <p>Enter acceleration on X-Y plane </p>
+                <label for="accX">X-axis</label>
+                <input type="number" step="0.01" name="accX" id="in-accX">
+                <br />
+                <label for="accY">Y-axis</label>
+                <input type="number" step="0.01" name="accY" id="in-accY">
+            </li>
             <button type="submit">Reset</button>
             <button id="stop" onclick="stopCycle();" type="button">Stop</button>
             <button id="start" onclick="startCycle();" type="button" disabled>Start</button>

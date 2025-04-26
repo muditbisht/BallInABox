@@ -1,11 +1,20 @@
 function formSubmit() {
     console.log(event);
     event.preventDefault();
-    let [posX, posY] = [document.getElementById("in-posX").value, document.getElementById("in-posY").value];
-    let [velX, velY] = [document.getElementById("in-velX").value, document.getElementById("in-velY").value];
-    let [accX, accY] = [document.getElementById("in-accX").value, document.getElementById("in-accY").value];
+    let [posX, posY] = [
+      parseFloat(document.getElementById("in-posX").value),
+      parseFloat(document.getElementById("in-posY").value),
+    ];
+    let [velX, velY] = [
+      parseFloat(document.getElementById("in-velX").value),
+      parseFloat(document.getElementById("in-velY").value),
+    ];
+    let [accX, accY] = [
+      parseFloat(document.getElementById("in-accX").value),
+      parseFloat(document.getElementById("in-accY").value),
+    ];
     ball.setData(posX, posY, velX, velY, accX, accY);
-    console.log(posX, posY, velX, velY, accX, accY);
+    console.log("Values:", {posX, posY, velX, velY, accX, accY});
     console.log(ball);
     document.getElementById("stop").removeAttribute("disabled");
     document.getElementById("start").setAttribute("disabled", true);
